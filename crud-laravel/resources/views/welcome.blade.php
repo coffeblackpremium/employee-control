@@ -7,8 +7,6 @@
     <link href="/resources/css/style.css" rel="stylesheet" >
   </head>
   <body class="bg-indigo-100">
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+      <h1 class="text-lg font-bold font-sans:Roboto flex justify-center mt-32"> Hello World! </h1>
   </body>
 </html>
