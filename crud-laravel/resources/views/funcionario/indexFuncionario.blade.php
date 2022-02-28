@@ -1,13 +1,16 @@
 @extends('layout.main')
 
 @section('content')
-  <div class="grid grid-cols-1 lg:grid-cols-2">
-    <div class="bg-red-600 lg:min-h-screen lg:flex lg:items-center p-8 sm:p-12 shadow-lg">
+  @guest
+    <nav class="bg-indigo-200 flex items-center justify-between shrink-0 py-4 lg:min-h-screen">
       <div class="flex-grow">
-        <h1 class="text-white text-center text-xl">Seja Bem-vindo</h1>
-        <a href="/register" class="p-4 flex justify-center items-center shrink-0 text-white text-sm font-bold hover:text-stone-400">Ainda não é cadastrado? Clique aqui</a></span>
+        <a href="#" class=""
       </div>
-    </div>
+    </nav>
 
-  </div>
+
+    <div class="flex items-center justify-center shrink-0 lg:min-h-screen">
+      <h1 class="text-white font-bold font-sans text-lg">Você não está autenticado para acessar está página!</h1>
+    </div>
+  @endguest
 @endsection
