@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/funcionarios', function() {
+    return view('funcionario.indexFuncionario');
+});
+
 Route::get('/', function () {
     return view('auth.login');
 });
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
