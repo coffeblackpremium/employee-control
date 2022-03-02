@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FuncionarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/funcionarios', function() {
-    return view('funcionario.indexFuncionario');
+Route::controller(FuncionarioController::class)->group(function(){
+    Route::get('/funcionarios', [FuncionarioController::class, 'index']);
+    Route::get('/funcionarios/criar', [FuncionarioController::class, 'create']);
 });
 
 Route::get('/', function () {
