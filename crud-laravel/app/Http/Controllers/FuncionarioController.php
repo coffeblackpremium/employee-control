@@ -13,11 +13,27 @@ class FuncionarioController extends Controller
         $funcionario = Funcionario::all();
         $paginate = DB::table('funcionarios')->paginate(20);
         
-        return view('funcionario.funcionarioIndex', ['funcionario'=>$funcionario, 'paginate'=>$paginate]);
+        return view('funcionario.indexFuncionario', ['funcionario'=>$funcionario, 'paginate'=>$paginate]);
     }
 
     public function create()
     {
-        return view('funcionario.createFuncionario');
+        $options = Funcionario::pluck('setor', 'id');
+        return view('funcionario.createFuncionario', ['option'=>$options]);
+    }
+
+    public function store(Request $request)
+    {
+        $funcionario = new Funcionario;
+
+        $funcionario->nome = $request->nome;
+        $funcionario->email = $request->email;
+        $funcionario->cpf = $request->cpf;
+        $funcionario->dataNascimento = $request->dataNascimento;
+        $funcionario->setor = $request->setor;
+
+        $funcionario->save();
+        return redirect('funcionario.indexFuncionario')->with('msg', 'Funcionario Cadastrado com Sucesso');
+
     }
 }

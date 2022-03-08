@@ -2,7 +2,7 @@
 
 @section('content')
   @auth
-    <nav class="bg-blue-600 flex flex-wrap items-center justify-between py-4 lg:min-w-screen">
+    <nav class="bg-blue-600 flex flex-wrap items-center justify-between py-4 lg:min-w-screen-">
       <div class="">
 
       </div>
@@ -12,15 +12,15 @@
       </div>
     </nav>
 
-    <div class="flex justify-center mt-32">
+    <div class="flex items-center justify-center mt-32">
       <div class="flex border-2 border-gray-200 rounded">
-        <input type="text" class="px-4 py-2 w-80" placeholder="Search...">
-        <button class="px-4 text-white bg-gray-600 border-l">Ok</button>
+        <input type="text" class="px-4 py-2 w-80" placeholder="Procura...">
+        <button class="text-white w-16 bg-gray-600 border-l">Ok</button>
       </div>
     </div>
 
-    <div class="flex justify-between items-center container mx-auto mt-12 lg:min-h-0 rounded-xl">
-      <div class="mx-auto  bg-slate-200 shadow-xl rounded-xl px-16">
+    <div class="flex justify-between items-center container mx-auto mt-12 lg:min-h-0 sm:min-h-full rounded-xl">
+      <div class="mx-auto  bg-white shadow-xl rounded-xl px-16">
         <table>
             <thead>
               <tr class="min-h-full">
@@ -60,7 +60,7 @@
               </td>
               <td class="">
                 <a href="#">
-                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2">
+                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2 item">
                     Adicionar Usuario
                   </button>
                 </a>

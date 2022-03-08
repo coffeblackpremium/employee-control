@@ -8,8 +8,8 @@
 
     <title>@yield('title')</title>
   </head>
-  <body class="bg-indigo-100">
-    <main>
+  <body class="bg-gray-100">
+    <main class="sm:w-full sm:h-64">
       @yield('content')
     </main>
 
