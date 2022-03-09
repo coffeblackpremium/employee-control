@@ -18,8 +18,8 @@ class FuncionarioController extends Controller
 
     public function create()
     {
-        $options = Funcionario::pluck('setor', 'id');
-        return view('funcionario.createFuncionario', ['option'=>$options]);
+        $setorOption = config('enums.setores');
+        return view('funcionario.createFuncionario', ['setorOption'=>$setorOption]);
     }
 
     public function store(Request $request)
@@ -29,6 +29,7 @@ class FuncionarioController extends Controller
         $funcionario->nome = $request->nome;
         $funcionario->email = $request->email;
         $funcionario->cpf = $request->cpf;
+        $funcionario->numeroCelular = $request->numeroCelular;
         $funcionario->dataNascimento = $request->dataNascimento;
         $funcionario->setor = $request->setor;
 

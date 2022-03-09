@@ -17,7 +17,7 @@ use App\Http\Controllers\FuncionarioController;
 Route::controller(FuncionarioController::class)->group(function() {
     Route::get('/funcionarios', [FuncionarioController::class, 'index']);
     Route::get('/funcionarios/criar', [FuncionarioController::class, 'create']);
-    Route::post('/funcionarios/cirar', [FuncionarioController::class, 'store']);
+    Route::post('/funcionarios/criar', [FuncionarioController::class, 'store']);
 });
 
 Route::get('/', function () {

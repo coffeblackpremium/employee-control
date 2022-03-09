@@ -18,6 +18,13 @@
         <button class="text-white w-16 bg-gray-600 border-l">Ok</button>
       </div>
     </div>
+    <div class="flex justify-start pl-14 items-center md:w-1/4 md: lg:w-1/3 float-right">
+      <a href="/funcionarios/criar">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 shadow-lg">
+          Adicionar Usuario
+        </button>
+      </a>
+    </div>
 
     <div class="flex justify-between items-center container mx-auto mt-12 lg:min-h-0 sm:min-h-full rounded-xl">
       <div class="mx-auto  bg-white shadow-xl rounded-xl px-16">
@@ -41,29 +48,24 @@
                 </th>
               </tr>
           </thead>
+
           <tbody class="text-center py-4">
+            @foreach ($funcionario as $funcionarios)
             <tr class="w-full">
               <td class="py-4 text-sm">
-                Jacinto pinto no rego
+                {{$funcionarios->nome}}
               </td>
               <td class="py-4 text-sm">
-                1231233215456
+                {{$funcionarios->cpf}}
               </td>
               <td class="py-4 text-sm">
-                5498765432
+                {{$funcionarios->numeroCelular}}
               </td>
               <td class="py-4 text-sm">
-                Dev. Pleno
+                {{$funcionarios->setor}}
               </td>
               <td class="py-4 text-sm">
-                20/12/2000
-              </td>
-              <td class="">
-                <a href="#">
-                  <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2 item">
-                    Adicionar Usuario
-                  </button>
-                </a>
+                {{$funcionarios->dataNascimento}}
               </td>
               <td class="px-8">
                 <a href="#">
@@ -81,6 +83,7 @@
               </td>
             </tr>
           </tbody>
+            @endforeach
         </table>
       </div>
     </div>
