@@ -12,8 +12,18 @@ class FuncionarioController extends Controller
     {
         $funcionario = Funcionario::all();
         $paginate = DB::table('funcionarios')->paginate(20);
+
+        $search = request('search');
+
+        if($search) {
+            $funcionario = Funcionario::where([
+                ['nome', 'like','%'.$search.'%']
+            ])->get();
+        } else {
+            $funcionario = Funcionario::all();
+        }
         
-        return view('funcionario.indexFuncionario', ['funcionario'=>$funcionario, 'paginate'=>$paginate]);
+        return view('funcionario.indexFuncionario', ['funcionario'=>$funcionario, 'paginate'=>$paginate, 'search'=>$search]);
     }
 
     public function create()

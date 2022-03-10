@@ -12,12 +12,17 @@
       </div>
     </nav>
 
-    <div class="flex items-center justify-center mt-32">
-      <div class="flex border-2 border-gray-200 rounded">
-        <input type="text" class="px-4 py-2 w-80" placeholder="Procura...">
-        <button class="text-white w-16 bg-gray-600 border-l">Ok</button>
+    <form action="/funcionarios" method="get">
+      <div class="flex items-center justify-center mt-32">
+        <div class="flex border-2 border-gray-200 rounded">
+          <input type="text" id="search" name="search" class="px-4 py-2 w-80" placeholder="Procura...">
+          <button type="submit" class="text-white w-16 bg-gray-600 border-l">Ok</button>
+        </div>
       </div>
-    </div>
+    </form>
+    @if($search)
+        <h2 class="text-center font-semibold mt-6">Você buscou por: {{$search}} ..</h2>
+    @endif
     <div class="flex justify-start pl-14 items-center md:w-1/4 md: lg:w-1/3 float-right">
       <a href="/funcionarios/criar">
         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 shadow-lg">
