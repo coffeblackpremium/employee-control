@@ -44,7 +44,22 @@ class FuncionarioController extends Controller
         $funcionario->setor = $request->setor;
 
         $funcionario->save();
-        return redirect('funcionario.indexFuncionario')->with('msg', 'Funcionario Cadastrado com Sucesso');
+        return redirect('/funcionarios')->with('msg', 'Funcionario Cadastrado com Sucesso');
 
+    }
+
+    public function destroy($id)
+    {
+        $funcionario = Funcionario::findOrFail($id)->delete();
+
+        return redirect('/funcionarios')->with('msg', 'O Funcionario foi excluido com Sucesso!');
+    }
+
+    public function edit($id)
+    {
+        $funcionario = Funcionario::findOrFail($id);
+        $setorOption = config('enums.setores');
+        
+        return view('funcionario.editFuncionario', ['funcionario' => $funcionario], ['setorOption' => $setorOption]);
     }
 }

@@ -1,5 +1,7 @@
 @extends('layout.main')
 
+@section('title', 'Cadastro ')
+
 @section('content')
   @auth
     <nav class="bg-blue-600 flex flex-wrap items-center justify-between py-4 lg:min-w-screen">

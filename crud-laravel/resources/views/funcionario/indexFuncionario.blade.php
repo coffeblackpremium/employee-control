@@ -73,23 +73,26 @@
                 {{$funcionarios->dataNascimento}}
               </td>
               <td class="px-8">
-                <a href="#">
+                <a href="/funcionarios/edit/{{$funcionarios->id}}">
                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2">
                     Editar
                   </button>
                 </a>
               </td>
               <td class="">
-                <a href="#">
-                  <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2 ">
+                <form action="/funcionarios/{{$funcionarios->id}}" method="POST" >
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-1 rounded-lg shadow-lg mb-2 ">
                     Excluir
                   </button>
-                </a>
+                </form>
               </td>
             </tr>
           </tbody>
             @endforeach
         </table>
+        {{$paginate->links()}}
       </div>
     </div>
     
