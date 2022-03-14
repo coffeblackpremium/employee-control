@@ -60,6 +60,14 @@ class FuncionarioController extends Controller
         $funcionario = Funcionario::findOrFail($id);
         $setorOption = config('enums.setores');
         
-        return view('funcionario.editFuncionario', ['funcionario' => $funcionario], ['setorOption' => $setorOption]);
+        return view('funcionario.editFuncionario', ['funcionario' => $funcionario, 'setorOption' => $setorOption]);
+    }
+
+    public function update(Request $request)
+    {   
+
+        Funcionario::findOrFail($request->id)->update($request->all());
+
+        return redirect('/funcionarios')->with('msg', 'Funcionario Editado com Sucesso!');
     }
 }

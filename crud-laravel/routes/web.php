@@ -18,8 +18,9 @@ Route::controller(FuncionarioController::class)->group(function() {
     Route::get('/funcionarios', [FuncionarioController::class, 'index']);
     Route::get('/funcionarios/criar', [FuncionarioController::class, 'create']);
     Route::post('/funcionarios/criar', [FuncionarioController::class, 'store']);
-    Route::delete('funcionarios/{id}', [FuncionarioController::class, 'destroy']);
-    Route::get('funcionarios/edit/{id}', [FuncionarioController::class, 'edit']);
+    Route::delete('/funcionarios/{id}', [FuncionarioController::class, 'destroy']);
+    Route::get('/funcionarios/edit/{id}', [FuncionarioController::class, 'edit']);
+    Route::put('/funcionarios/update/{id}', [FuncionarioController::class, 'update']);
 });
 
 Route::get('/', function () {
