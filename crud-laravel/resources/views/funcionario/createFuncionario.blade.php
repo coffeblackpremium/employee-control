@@ -20,11 +20,11 @@
       <div class="mt-10 w-1/3 rounded-lg shadow-md mx-auto flex items-center justify-center flex-col bg-white">
         <div class="mt-3">
           <label for="nome" class="block text-gray-700 text-sm font-bold mb-2">Nome</label>
-          <input type="text" name="nome" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="text" name="nome" placeholder="Ex: John Doe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mt-3">
           <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-          <input type="email"  name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="email"  name="email" placeholder="Ex: johndoe@hotmail.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mt-3">
           <label for="cpf" class="block text-gray-700 text-sm font-bold mb-2">CPF</label>
@@ -32,11 +32,11 @@
         </div>
         <div class="mt-3">
           <label for="numeroCelular" class="block text-gray-700 text-sm font-bold mb-2">Numero de Celular</label>
-          <input type="text" pattern="[0-9]{9}" name="numeroCelular"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="text" placeholder="Digite os numeros tudo junto" pattern="[0-9]{9}" name="numeroCelular"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mt-3">
           <label for="dataNascimento" class="block text-gray-700 text-sm font-bold mb-2">Data de Nascimento</label>
-          <input type="date" name="dataNascimento" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mr-12 leading-tight focus:outline-none focus:shadow-outline">
+          <input type="date" name="dataNascimento" placeholder="Ex: 20/01/2002" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mr-12 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mt-3 py-2 min-w-max">
           <label for="setor" class="block float-center ml-2 text-gray-700 text-sm font-bold mb-2">Selecione o Setor:</label>
@@ -46,7 +46,7 @@
               @endforeach
             </select>
         </div>
-        <input type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-8 mt-4 mb-4 rounded" >
+        <input type="submit" value="Enviar" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-8 mt-4 mb-4 rounded" >
       </div>
 
     </form>
